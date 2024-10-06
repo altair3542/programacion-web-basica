@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 2: Estructuras Avanzadas en HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header con botón para descargar PDF -->
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sesión 2: Estructuras Avanzadas en HTML</h1>
+            <a href="docs/sesion2_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </header>
+
+    <!-- Contenido de la sesión -->
+    <main class="container mx-auto mt-10 p-6">
+        <section>
+            <h2 class="text-xl font-semibold mb-4">1. Revisión de la Sesión Anterior</h2>
+            <p class="mb-4 text-gray-400">Comenzamos revisando los conceptos básicos de HTML aprendidos en la primera sesión, incluyendo etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, y <code>&lt;ol&gt;</code>.</p>
+
+            <h3 class="text-lg font-semibold mb-4">2. Formatos de Texto y Estructura en HTML</h3>
+            <h4 class="text-md font-semibold mb-2">2.1 Etiquetas de Formato de Texto</h4>
+            <p class="mb-4 text-gray-400">Algunas etiquetas importantes para dar formato al texto incluyen:</p>
+            <ul class="list-disc list-inside mb-4 text-gray-400">
+                <li><code>&lt;b&gt;</code> y <code>&lt;strong&gt;</code>: Texto en negrita.</li>
+                <li><code>&lt;i&gt;</code> y <code>&lt;em&gt;</code>: Texto en cursiva o con énfasis leve.</li>
+                <li><code>&lt;u&gt;</code>: Subrayar texto (se recomienda usar CSS para este estilo).</li>
+                <li><code>&lt;small&gt;</code>: Texto de menor tamaño.</li>
+            </ul>
+
+            <h4 class="text-md font-semibold mb-2">2.2 Agrupación de Contenido</h4>
+            <p class="mb-4 text-gray-400">Podemos agrupar elementos utilizando:</p>
+            <ul class="list-disc list-inside mb-4 text-gray-400">
+                <li><code>&lt;div&gt;</code>: Agrupa bloques de contenido para darle estilo o layout.</li>
+                <li><code>&lt;span&gt;</code>: Agrupa contenido en línea.</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold mb-4">3. Tablas en HTML</h3>
+            <p class="mb-4 text-gray-400">Para organizar datos en filas y columnas:</p>
+            <pre><code class="language-html">
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Juan&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">4. Imágenes en HTML</h3>
+            <p class="mb-4 text-gray-400">Para insertar una imagen en una página HTML:</p>
+            <pre><code class="language-html">
+&lt;img src="imagen.jpg" alt="Descripción de la imagen" width="300" height="200"&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">5. Enlaces en HTML</h3>
+            <p class="mb-4 text-gray-400">Crear un enlace de texto:</p>
+            <pre><code class="language-html">
+&lt;a href="https://www.ejemplo.com"&gt;Visitar Ejemplo&lt;/a&gt;
+            </code></pre>
+
+            <p class="mb-4 text-gray-400">Crear un enlace de imagen:</p>
+            <pre><code class="language-html">
+&lt;a href="https://www.ejemplo.com"&gt;
+  &lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
+&lt;/a&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">6. Ejercicio Práctico</h3>
+            <p class="mb-4 text-gray-400">Tarea:</p>
+            <ul class="list-disc list-inside mb-4 text-gray-400">
+                <li>Crear una tabla con al menos 3 filas y 3 columnas.</li>
+                <li>Insertar una imagen con texto alternativo y ajustar su tamaño.</li>
+                <li>Añadir al menos dos enlaces: uno interno y uno externo.</li>
+            </ul>
+        </section>
+
+        <!-- Botón para descargar PDF al final de la página -->
+        <div class="mt-10 text-center">
+            <a href="docs/sesion2_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2024 Santiago Mesa Serna - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</body>
+</html>

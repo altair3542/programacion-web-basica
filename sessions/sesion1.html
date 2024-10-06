@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 1: Introducción a HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header con botón para descargar PDF -->
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sesión 1: Introducción a la Programación Web y HTML Básico</h1>
+            <a href="docs/sesion1_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </header>
+
+    <!-- Contenido de la sesión -->
+    <main class="container mx-auto mt-10 p-6">
+        <section>
+            <h2 class="text-xl font-semibold mb-4">1. Introducción a la Programación Web</h2>
+            <p class="mb-4 text-gray-400">La programación web es una disciplina fundamental en el desarrollo de la tecnología actual. Cuando hablamos de programación web, nos referimos a la capacidad de crear sitios y aplicaciones que interactúan con los usuarios mediante navegadores web.</p>
+            <p class="mb-4 text-gray-400">Estas interacciones son posibles gracias a tres pilares fundamentales:</p>
+            <ul class="list-disc list-inside mb-4 text-gray-400">
+                <li>HTML (HyperText Markup Language): Se encarga de la estructura y el contenido de la página.</li>
+                <li>CSS (Cascading Style Sheets): Controla el estilo, como colores, fuentes y disposición de los elementos.</li>
+                <li>JavaScript: Aporta interactividad a los sitios web.</li>
+            </ul>
+            <p class="mb-4 text-gray-400">Hoy nos enfocaremos en el primero de estos tres pilares: HTML, que es la base sobre la que construimos todo lo demás. Es importante entender que HTML no es un lenguaje de programación; es un lenguaje de marcado.</p>
+
+            <h3 class="text-lg font-semibold mb-4">2. ¿Qué es HTML?</h3>
+            <p class="mb-4 text-gray-400">HTML (HyperText Markup Language) es el lenguaje estándar que utilizamos para definir la estructura de las páginas web. Se llama HyperText porque permite crear enlaces entre diferentes documentos.</p>
+
+            <h3 class="text-lg font-semibold mb-4">3. Estructura de un Documento HTML</h3>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi primera página web&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;¡Hola, Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este es mi primer documento HTML.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p class="mb-4 text-gray-400">Vamos a desglosar cada parte del código:...</p>
+
+            <h3 class="text-lg font-semibold mb-4">4. Etiquetas HTML Básicas</h3>
+            <h4 class="text-md font-semibold mb-2">4.1 Encabezados</h4>
+            <pre><code class="language-html">
+&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Título de sección&lt;/h3&gt;
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">4.2 Párrafos</h4>
+            <pre><code class="language-html">
+&lt;p&gt;Este es un párrafo de texto en mi página web.&lt;/p&gt;
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">4.3 Listas</h4>
+            <pre><code class="language-html">
+&lt;ul&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Primer elemento&lt;/li&gt;
+  &lt;li&gt;Segundo elemento&lt;/li&gt;
+  &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ol&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">5. Ejercicio Práctico</h3>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi primera página web&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bienvenidos a mi primera página web&lt;/h1&gt;
+    &lt;p&gt;Este es un párrafo para probar HTML.&lt;/p&gt;
+    &lt;h2&gt;Lista de tareas&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Aprender HTML&lt;/li&gt;
+      &lt;li&gt;Practicar CSS&lt;/li&gt;
+      &lt;li&gt;Desarrollar un sitio web&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </section>
+
+        <!-- Botón para descargar PDF al final de la página -->
+        <div class="mt-10 text-center">
+            <a href="docs/sesion1_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2024 Santiago Mesa Serna - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</body>
+</html>

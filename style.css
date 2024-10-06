@@ -1,3 +1,66 @@
+/* Efecto de hover circular en los botones */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-animated:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(139, 92, 246, 0.5); /* Color del hover (sombra circular) */
+  transition: all 0.6s ease;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.btn-animated:hover:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-animated:hover {
+  background-color: #3b0d60; /* Tono púrpura más oscuro, cercano al negro */
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Otras clases de estilo que puedes agregar para personalizar */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-purple-600 {
+  background-color: #8b5cf6;
+}
+
+.bg-purple-600:hover {
+  background-color: #3b0d60; /* Tono más oscuro al hacer hover */
+}
+
+.text-white {
+  color: white;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+
 /* Animación de las tarjetas (de abajo hacia arriba) */
 @keyframes slide-up {
   0% {
@@ -12,7 +75,7 @@
 
 /* Aplicar la animación a las tarjetas */
 .card-animated {
-  opacity: 0; /* Están invisibles al principio */
+  opacity: 0; /* Están invisibles hasta que se inicie la animación */
   animation: slide-up 0.8s ease forwards;
 }
 
@@ -40,4 +103,30 @@
 }
 .card-8 {
   animation-delay: 1.5s;
+}
+
+/* Asegurar que el texto dentro de los botones esté centrado */
+/* Animación de las tarjetas (de abajo hacia arriba) */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Las tarjetas inician más abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Las tarjetas se posicionan en su lugar final */
+  }
+}
+
+/* Estado inicial de las tarjetas (invisibles) */
+.card-animated {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Cuando la tarjeta es visible */
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
