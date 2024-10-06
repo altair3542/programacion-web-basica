@@ -1,0 +1,43 @@
+/* Animación de las tarjetas (de abajo hacia arriba) */
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(50px); /* Las tarjetas inician más abajo */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* Las tarjetas se posicionan en su lugar final */
+  }
+}
+
+/* Aplicar la animación a las tarjetas */
+.card-animated {
+  opacity: 0; /* Están invisibles al principio */
+  animation: slide-up 0.8s ease forwards;
+}
+
+/* Agregar retraso a las tarjetas para que aparezcan secuencialmente */
+.card-1 {
+  animation-delay: 0.1s;
+}
+.card-2 {
+  animation-delay: 0.3s;
+}
+.card-3 {
+  animation-delay: 0.5s;
+}
+.card-4 {
+  animation-delay: 0.7s;
+}
+.card-5 {
+  animation-delay: 0.9s;
+}
+.card-6 {
+  animation-delay: 1.1s;
+}
+.card-7 {
+  animation-delay: 1.3s;
+}
+.card-8 {
+  animation-delay: 1.5s;
+}
