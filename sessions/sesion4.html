@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 4: Introducción a CSS, Selectores y Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header con botón para descargar PDF -->
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sesión 4: Introducción a CSS, Selectores y Bootstrap</h1>
+            <!-- Enlace al índice de sesiones -->
+            <a href="/index.html" class="text-purple-400 hover:text-purple-600 underline">Volver al índice de sesiones</a>
+            <a href="docs/sesion4_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </header>
+
+    <!-- Contenido de la sesión -->
+    <main class="container mx-auto mt-10 p-6">
+        <section>
+            <h2 class="text-xl font-semibold mb-4">Objetivo de la clase</h2>
+            <p class="mb-4 text-gray-400">Al finalizar esta sesión, los estudiantes comprenderán la estructura básica de CSS, sabrán cómo aplicar selectores de clase e ID desde la perspectiva de HTML y CSS, y recibirán una introducción a Bootstrap para mejorar el diseño y la responsividad de sus páginas web.</p>
+
+            <h3 class="text-lg font-semibold mb-4">1. Revisión de la Sesión Anterior</h3>
+            <p class="mb-4 text-gray-400">Vamos a revisar lo aprendido en la última clase sobre formularios y JavaScript. En esta sesión, aplicaremos estilos a nuestras páginas con CSS y aprenderemos a usar Bootstrap.</p>
+
+            <h3 class="text-lg font-semibold mb-4">2. Estructura Básica de CSS</h3>
+            <h4 class="text-md font-semibold mb-2">2.1 ¿Qué es CSS?</h4>
+            <p class="mb-4 text-gray-400">CSS (Cascading Style Sheets) es el lenguaje que usamos para controlar la presentación de las páginas web. Mientras que HTML organiza el contenido, CSS se encarga de su apariencia: colores, tipografías, márgenes, espaciados, alineaciones, etc.</p>
+            <p class="mb-4 text-gray-400">La estructura básica de una regla CSS es:</p>
+            <pre><code class="language-css">
+selector {
+  propiedad: valor;
+}
+            </code></pre>
+            <p class="mb-4 text-gray-400">Ejemplo básico de CSS:</p>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Página con CSS&lt;/title&gt;
+    &lt;style&gt;
+      body {
+        background-color: lightgray;
+      }
+      h1 {
+        color: blue;
+        font-size: 24px;
+      }
+      p {
+        color: black;
+        font-family: Arial, sans-serif;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bienvenidos a mi sitio&lt;/h1&gt;
+    &lt;p&gt;Este es un párrafo con estilo.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">3. Selectores de Clase e ID desde HTML</h3>
+            <h4 class="text-md font-semibold mb-2">3.1 Clase en HTML</h4>
+            <pre><code class="language-html">
+&lt;p class="resaltado"&gt;Este es un párrafo con la clase "resaltado".&lt;/p&gt;
+            </code></pre>
+            <h4 class="text-md font-semibold mb-2">3.2 ID en HTML</h4>
+            <pre><code class="language-html">
+&lt;h1 id="titulo"&gt;Este es el título principal con un ID único.&lt;/h1&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">4. Tipos de Estilos en CSS</h3>
+            <h4 class="text-md font-semibold mb-2">4.1 CSS en línea (Inline CSS)</h4>
+            <pre><code class="language-html">
+&lt;p style="color: red;"&gt;Este es un párrafo con estilo en línea.&lt;/p&gt;
+            </code></pre>
+            <h4 class="text-md font-semibold mb-2">4.2 CSS Interno</h4>
+            <pre><code class="language-html">
+&lt;head&gt;
+  &lt;style&gt;
+    h1 {
+      color: green;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+            </code></pre>
+            <h4 class="text-md font-semibold mb-2">4.3 CSS Externo</h4>
+            <pre><code class="language-html">
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;/head&gt;
+            </code></pre>
+            <p class="mb-4 text-gray-400">Contenido del archivo estilos.css:</p>
+            <pre><code class="language-css">
+h1 {
+  color: purple;
+  font-size: 28px;
+}
+p {
+  color: gray;
+}
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">5. Bootstrap – Introducción Básica</h3>
+            <h4 class="text-md font-semibold mb-2">5.1 ¿Qué es Bootstrap?</h4>
+            <p class="mb-4 text-gray-400">Bootstrap es un framework CSS que facilita el diseño de páginas web. Proporciona estilos predefinidos y clases para crear sitios web atractivos sin necesidad de escribir CSS personalizado.</p>
+            <h4 class="text-md font-semibold mb-2">5.2 Incluir Bootstrap</h4>
+            <pre><code class="language-html">
+&lt;head&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+            </code></pre>
+            <h4 class="text-md font-semibold mb-2">5.3 Usando clases de Bootstrap</h4>
+            <pre><code class="language-html">
+&lt;div class="container"&gt;
+  &lt;h1 class="text-center text-primary"&gt;Bienvenidos a mi página&lt;/h1&gt;
+  &lt;p class="text-muted"&gt;Este es un párrafo con estilos de Bootstrap.&lt;/p&gt;
+  &lt;button class="btn btn-primary"&gt;Haz clic aquí&lt;/button&gt;
+&lt;/div&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">6. Ejercicio Práctico</h3>
+            <ul class="list-disc list-inside mb-4 text-gray-400">
+                <li>Crea un archivo HTML llamado <code>index.html</code>.</li>
+                <li>Aplica estilos personalizados usando clases e IDs desde CSS.</li>
+                <li>Usa Bootstrap para mejorar la presentación y hacer la página responsiva.</li>
+            </ul>
+        </section>
+
+        <!-- Botón para descargar PDF al final de la página -->
+        <div class="mt-10 text-center">
+            <a href="docs/sesion4_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2024 Santiago Mesa Serna - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</body>
+</html>

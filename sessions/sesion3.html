@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 3: Formularios en HTML con JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header con botón para descargar PDF -->
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sesión 3: Formularios en HTML con JavaScript</h1>
+            <!-- Enlace al índice de sesiones -->
+            <a href="/index.html" class="text-purple-400 hover:text-purple-600 underline">Volver al índice de sesiones</a>
+            <a href="docs/sesion3_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </header>
+
+    <!-- Contenido de la sesión -->
+    <main class="container mx-auto mt-10 p-6">
+        <section>
+            <h2 class="text-xl font-semibold mb-4">Objetivo de la clase</h2>
+            <p class="mb-4 text-gray-400">Al finalizar esta sesión, los estudiantes serán capaces de crear formularios en HTML, comprender los diferentes tipos de entradas, y utilizar JavaScript para validar los datos antes de enviarlos. También aprenderán cómo evitar el envío de formularios no válidos mediante el uso de JavaScript.</p>
+
+            <h3 class="text-lg font-semibold mb-4">1. Revisión de la Sesión Anterior</h3>
+            <p class="mb-4 text-gray-400">Vamos a revisar brevemente los conceptos de la última clase, donde trabajamos con tablas, imágenes y enlaces en HTML. También revisaremos la tarea de mejorar las páginas web utilizando estos elementos.</p>
+
+            <h3 class="text-lg font-semibold mb-4">2. Introducción a los Formularios en HTML</h3>
+            <p class="mb-4 text-gray-400">Los formularios son el principal mecanismo de interacción entre los usuarios y los sitios web. Permiten a los usuarios enviar datos, como nombres, correos, comentarios, y mucho más. Estos datos pueden ser procesados en el lado del servidor o, como veremos hoy, directamente en el lado del cliente con JavaScript.</p>
+            <p class="mb-4 text-gray-400">Estructura básica de un formulario:</p>
+            <pre><code class="language-html">
+&lt;form id="miFormulario"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre"&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">3. Tipos de Entradas en los Formularios</h3>
+            <h4 class="text-md font-semibold mb-2">3.1 Campos de Texto</h4>
+            <pre><code class="language-html">
+&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+&lt;input type="text" id="nombre" name="nombre"&gt;
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">3.2 Contraseñas</h4>
+            <pre><code class="language-html">
+&lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+&lt;input type="password" id="password" name="password"&gt;
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">3.3 Botones de Radio y Casillas de Verificación</h4>
+            <pre><code class="language-html">
+&lt;label for="genero"&gt;Género:&lt;/label&gt;
+&lt;input type="radio" id="hombre" name="genero" value="hombre"&gt; Hombre
+&lt;input type="radio" id="mujer" name="genero" value="mujer"&gt; Mujer
+            </code></pre>
+
+            <pre><code class="language-html">
+&lt;label&gt;Intereses:&lt;/label&gt;
+&lt;input type="checkbox" id="musica" name="intereses" value="musica"&gt; Música
+&lt;input type="checkbox" id="deportes" name="intereses" value="deportes"&gt; Deportes
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">3.4 Áreas de Texto Multilínea</h4>
+            <pre><code class="language-html">
+&lt;label for="comentarios"&gt;Comentarios:&lt;/label&gt;
+&lt;textarea id="comentarios" name="comentarios" rows="4" cols="50"&gt;&lt;/textarea&gt;
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">3.5 Botón de Envío</h4>
+            <pre><code class="language-html">
+&lt;input type="submit" value="Enviar"&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">4. Validación de Formularios con JavaScript</h3>
+            <h4 class="text-md font-semibold mb-2">4.1 Previniendo el Envío del Formulario</h4>
+            <pre><code class="language-html">
+&lt;form id="miFormulario"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById('miFormulario').addEventListener('submit', function(event) {
+    var nombre = document.getElementById('nombre').value;
+    if (nombre === '') {
+      alert('Por favor, ingrese su nombre.');
+      event.preventDefault(); // Evita que el formulario se envíe
+    }
+  });
+&lt;/script&gt;
+            </code></pre>
+
+            <h4 class="text-md font-semibold mb-2">4.2 Validación de otros campos</h4>
+            <pre><code class="language-html">
+&lt;form id="miFormulario"&gt;
+  &lt;label for="email"&gt;Correo electrónico:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById('miFormulario').addEventListener('submit', function(event) {
+    var email = document.getElementById('email').value;
+    if (!email.includes('@')) {
+      alert('Por favor, ingrese un correo electrónico válido.');
+      event.preventDefault();
+    }
+  });
+&lt;/script&gt;
+            </code></pre>
+
+            <h3 class="text-lg font-semibold mb-4">5. Ejercicio Práctico: Creación de un Formulario Completo con Validación</h3>
+            <p class="mb-4 text-gray-400">Instrucciones:</p>
+            <ul class="list-disc list-inside mb-4 text-gray-400">
+                <li>Crea un nuevo archivo HTML llamado <code>formulario_validacion.html</code>.</li>
+                <li>Utiliza el siguiente código base:</li>
+            </ul>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Formulario con Validación&lt;/title&gt;
+    &lt;script&gt;
+      function validarFormulario(event) {
+        var nombre = document.getElementById('nombre').value;
+        var email = document.getElementById('email').value;
+
+        if (nombre === '') {
+          alert('Por favor, ingrese su nombre.');
+          event.preventDefault();
+        }
+        if (!email.includes('@')) {
+          alert('Por favor, ingrese un correo electrónico válido.');
+          event.preventDefault();
+        }
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form id="miFormulario" onsubmit="validarFormulario(event)"&gt;
+      &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+      &lt;input type="text" id="nombre" name="nombre"&gt;&lt;br&gt;&lt;br&gt;
+      &lt;label for="email"&gt;Correo electrónico:&lt;/label&gt;
+      &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+      &lt;input type="submit" value="Enviar"&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </section>
+
+        <!-- Botón para descargar PDF al final de la página -->
+        <div class="mt-10 text-center">
+            <a href="docs/sesion3_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2024 Santiago Mesa Serna - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</body>
+</html>
