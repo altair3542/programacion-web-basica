@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 6: Integrando JavaScript y Tailwind para Interactividad</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Prism.js para el resaltado de código -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header con botón para descargar PDF y regresar al índice -->
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Sesión 6: Integrando JavaScript y Tailwind para Interactividad</h1>
+            <div>
+                <a href="/index.html" class="bg-gray-700 text-white py-2 px-4 rounded-full hover:bg-gray-600 mr-4">Volver al Índice</a>
+                <a href="docs/sesion6_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido de la sesión -->
+    <main class="container mx-auto mt-10 p-6">
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Objetivo de la clase</h2>
+            <p class="mb-4 text-gray-400">
+                Al finalizar esta sesión, los estudiantes serán capaces de manipular el DOM con JavaScript, crear interacciones dinámicas con eventos y gestionar archivos HTML, CSS y JavaScript separados, integrando TailwindCSS para estilizar sus páginas.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4">1. Revisión de la Sesión Anterior (15 minutos)</h3>
+            <p class="mb-4 text-gray-400">
+                Repasamos la creación de layouts con Flexbox y Grid Layout utilizando TailwindCSS. Verificación de las tareas anteriores, viendo la implementación de las técnicas de diseño adaptativo en los proyectos de los estudiantes.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4">2. Introducción a JavaScript, el DOM y TailwindCSS (45 minutos)</h3>
+            <p class="mb-4 text-gray-400">
+                JavaScript es el lenguaje de programación que permite la manipulación dinámica del contenido de una página web, proporcionando interactividad mediante la manipulación del DOM (Document Object Model).
+            </p>
+
+            <h4 class="text-lg font-semibold mb-2">2.1 ¿Qué es el DOM?</h4>
+            <p class="mb-4 text-gray-400">
+                El DOM es la representación estructurada de los elementos HTML en forma de árbol jerárquico. Con JavaScript podemos acceder a los elementos utilizando selectores como <code>getElementById</code>, <code>querySelector</code> y <code>querySelectorAll</code>.
+            </p>
+
+            <h4 class="text-lg font-semibold mb-2">2.2 Archivos separados para una estructura más limpia</h4>
+            <p class="mb-4 text-gray-400">
+                Trabajaremos con HTML, CSS, y JavaScript en archivos separados para mantener una estructura organizada y escalable.
+            </p>
+
+            <h4 class="text-lg font-semibold mb-2">2.3 Insertar y enlazar JavaScript y CSS</h4>
+            <p class="mb-4 text-gray-400">
+                En el archivo HTML, enlazamos tanto TailwindCSS como nuestros archivos personalizados de CSS y JavaScript.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4">3. Eventos en JavaScript con Interacción Dinámica (45 minutos)</h3>
+            <p class="mb-4 text-gray-400">
+                Los eventos son acciones que ocurren en una página web cuando el usuario interactúa con ella (clics, escritura, desplazamiento). JavaScript captura estos eventos y ejecuta funciones en respuesta.
+            </p>
+
+            <h4 class="text-lg font-semibold mb-2">3.1 Crear una lista dinámica con eventos</h4>
+            <p class="mb-4 text-gray-400">
+                Creamos una lista interactiva que permite agregar elementos, eliminarlos y alternar su visibilidad utilizando JavaScript.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4">4. Ejercicio Práctico: Crear una Lista Dinámica (45 minutos)</h3>
+            <p class="mb-4 text-gray-400">
+                Crearás una página web que incluya un campo para agregar elementos a una lista, un botón para alternar su visibilidad, y otro para eliminar elementos.
+            </p>
+
+            <h4 class="text-lg font-semibold mb-2">4.1 Estructura HTML</h4>
+            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Lista Dinámica&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"&gt;
+  &lt;/head&gt;
+  &lt;body class="bg-gray-900 text-white"&gt;
+    &lt;div class="container mt-5"&gt;
+      &lt;h1 class="text-2xl mb-4"&gt;Lista Dinámica&lt;/h1&gt;
+      &lt;input type="text" id="itemInput" class="form-control bg-gray-700 text-white p-2 rounded-md" placeholder="Nuevo elemento"&gt;
+      &lt;button id="addButton" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 mt-2 rounded-md"&gt;Agregar&lt;/button&gt;
+      &lt;button id="toggleButton" class="bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 mt-2 rounded-md"&gt;Ocultar Lista&lt;/button&gt;
+      &lt;ul id="miLista" class="list-none mt-3"&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <h4 class="text-lg font-semibold mb-2">4.2 Lógica en JavaScript</h4>
+            <pre><code class="language-javascript">
+// Lógica para agregar elementos y alternar la lista
+document.addEventListener('DOMContentLoaded', function() {
+  const addButton = document.querySelector('#addButton');
+  const toggleButton = document.querySelector('#toggleButton');
+  const lista = document.querySelector('#miLista');
+
+  addButton.addEventListener('click', function() {
+    const input = document.querySelector('#itemInput').value;
+    if (input.trim() !== '') {
+      const li = document.createElement('li');
+      li.textContent = input;
+      li.classList.add('bg-gray-800', 'text-white', 'p-2', 'rounded-md', 'mt-2');
+      lista.appendChild(li);
+    }
+  });
+
+  toggleButton.addEventListener('click', function() {
+    if (lista.style.display === 'none') {
+      lista.style.display = 'block';
+      toggleButton.textContent = 'Ocultar Lista';
+    } else {
+      lista.style.display = 'none';
+      toggleButton.textContent = 'Mostrar Lista';
+    }
+  });
+});
+            </code></pre>
+        </section>
+
+        <!-- Botón para descargar PDF al final de la página -->
+        <div class="mt-10 text-center">
+            <a href="docs/sesion6_pwb.pdf" class="bg-purple-600 text-white py-2 px-4 rounded-full hover:bg-purple-700">Descargar PDF</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2024 Santiago Mesa Serna - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Prism.js para el resaltado de código -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>
